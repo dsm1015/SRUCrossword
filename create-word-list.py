@@ -7,6 +7,7 @@ openai.api_key = 'YOUR_API_KEY'
 
 sru_json = 'sru-word-list.json'
 common_words_txt = 'common-words.txt'
+output_filename = 'generated-list.json'
 sru_words_count = 10
 common_words_count = 20
 
@@ -55,3 +56,8 @@ random.shuffle(word_dict['words'])
 
 for x in word_dict['words']:
   print(f"{x['word']} - {x['clue']}")
+
+with open(output_filename, 'w') as json_file:
+    json.dump(word_dict, json_file, indent=4)
+
+print(f"Saved word_dict to {output_filename}")

@@ -1,9 +1,12 @@
 import openai
 import json
 import random
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize OpenAI API
-openai.api_key = 'YOUR_API_KEY'
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 sru_json = 'sru-word-list.json'
 common_words_txt = 'common-words.txt'
